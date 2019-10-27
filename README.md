@@ -8,4 +8,4 @@ It has no dependencies (other than json support in PHP) and is a single method. 
 
 [Show me the code!](json_sort.php)
 
-NB: If you do use PHPUnit, then take a look at the "`assertEqualsCanonicalizing`" function [here](https://phpunit.readthedocs.io/en/latest/assertions.html#assertequalscanonicalizing).
+NB: If you do use PHPUnit, then take a look at the "`assertJsonStringEqualsJsonString`" function [here](https://phpunit.readthedocs.io/en/latest/assertions.html#assertjsonstringequalsjsonstring).
