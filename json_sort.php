@@ -22,12 +22,14 @@ function json_sort(string $json, bool $objects=true, bool $arrays=false): string
             });
         } elseif ($objects && is_object($json)) {
             $arr = (array) $json;
-            uksort($arr,function ($a,$b) use ($arr) {
-                return json_encode([$a => $arr[$a]])<=>json_encode([$b => $arr[$b]]);
-            });
+            ksort($arr);
             $json = (object) $arr;
         }
         return $json;
     };
     return json_encode($order(json_decode($json)));
 }
+
+//echo json_sort('{"id":10,"usr":{"uid":10,"gid":5,"roles":[3,1,2]},"cat":2}',true,false)."\n";
+//echo json_sort('{"id":10,"usr":{"uid":10,"gid":5,"roles":[3,1,2]},"cat":2}',false,true)."\n";
+//echo json_sort('{"id":10,"usr":{"uid":10,"gid":5,"roles":[3,1,2]},"cat":2}',true,true)."\n";
